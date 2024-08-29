@@ -19,7 +19,8 @@ class Mage extends Character{
 
   heal_mage(player) {
     const healing = 2 * this.magicPts
-    player.lifepoints += healing
+    player.lifePoints += healing
+
     console.log(`${this.name} (Mago) curou ${player.name} em ${healing} pontos de vida!`)
     console.log(`Os ponto de vida de ${player.name} foram restaurados para ${player.lifePoints}!`)
   }

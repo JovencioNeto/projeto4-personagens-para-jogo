@@ -11,7 +11,7 @@ class Warrior extends Character {
         if (this.position === 'attack') {
             const damage = this.attackPts - player.defensePts
             if (damage > 0) {
-                player.lifepoints -= damage
+                player.lifePoints -= damage
                 console.log(`${this.name} (Guerreiro) atacou ${player.name} causando ${damage} de dano!`)
                 console.log(`A vida restante do ${player.name} é ${player.lifePoints}!`)
             } else {
