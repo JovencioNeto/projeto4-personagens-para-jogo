@@ -5,13 +5,14 @@ class Thief extends Character{
     super(name, lifepoints, attackPts, defensePts)
   }
 
-  attack_thief(target) {
-    const damage = 2 * (this.attackPts - target.defensePts)
+  attack_thief(player) {
+    const damage = 2 * (this.attackPts - player.defensePts)
     if (damage > 0) {
-      target.lifepoints -= damage
-      console.log(`${this.name} (Ladrão) atacou ${target.name} causando ${damage} de dano!`)
+      player.lifepoints -= damage
+      console.log(`${this.name} (Ladrão) atacou ${player.name} causando ${damage} de dano!`)
+      console.log(`A vida restante do ${player.name} é ${player.lifePoints}!`)
     } else {
-      console.log(`${this.name} (Ladrão) atacou ${target.name}, mas o ataque foi ineficaz!`)
+      console.log(`${this.name} (Ladrão) atacou ${player.name}, mas o ataque foi ineficaz!`)
     }
   }
 }

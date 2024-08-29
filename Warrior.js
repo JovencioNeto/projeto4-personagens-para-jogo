@@ -2,19 +2,20 @@ const Character = require('./Character')
 
 class Warrior extends Character {
     constructor(name, lifepoints, attackPts, defensePts, shieldPts, position) {
-      super(name, lifepoints, attackPts, defensePts)
-      this.shieldPts = shieldPts
-      this.position = position
+        super(name, lifepoints, attackPts, defensePts)
+        this.shieldPts = shieldPts
+        this.position = position
     }
   
-    attack_warrior(target) {
+    attack_warrior(player) {
         if (this.position === 'attack') {
-            const damage = this.attackPts - target.defensePts
+            const damage = this.attackPts - player.defensePts
             if (damage > 0) {
-                target.lifepoints -= damage
-                console.log(`${this.name} (Guerreiro) atacou ${target.name} causando ${damage} de dano!`)
+                player.lifepoints -= damage
+                console.log(`${this.name} (Guerreiro) atacou ${player.name} causando ${damage} de dano!`)
+                console.log(`A vida restante do ${player.name} é ${player.lifePoints}!`)
             } else {
-                console.log(`${this.name} (Guerreiro) atacou ${target.name}, mas o ataque foi ineficaz!`)
+                console.log(`${this.name} (Guerreiro) atacou ${player.name}, mas o ataque foi ineficaz!`)
             }
         } else {
             console.log(`${this.name} (Guerreiro) está em posição de defesa e não pode atacar.`)
